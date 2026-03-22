@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="智警财安 — AI财务风险预警专家，RNN+CNN多模态模型，识别准确率98.7%，覆盖中小企业至金融机构全场景。" />
+  <meta name="keywords" content="智警财安,AI财务风控,风险预警,多模态深度学习,合规审计,金融科技" />
+  <title>智警财安 | AI财务风险预警与企业级智能风控平台</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 跳过导航：键盘用户可直达主内容 -->
+  <a href="#main-content" class="skip-link">跳到主内容</a>
+
+  <!-- 全局消息区：由脚本写入 Toast，供读屏软件播报 -->
+  <div id="toast-region" class="toast-region" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="#hero" class="logo" aria-label="智警财安 首页">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text" data-i18n="brand">智警财安</span>
+      </a>
+
+      <button
+        type="button"
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+        aria-label="打开或关闭导航菜单"
+      >
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="主导航">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link" data-i18n="nav_home">首页</a></li>
+          <li><a href="#product-highlights" class="nav-link" data-i18n="nav_highlights">产品特色</a></li>
+          <li><a href="#features" class="nav-link" data-i18n="nav_features">核心功能</a></li>
+          <li><a href="#scenarios" class="nav-link" data-i18n="nav_scenarios">场景方案</a></li>
+          <li><a href="#product-demo" class="nav-link" data-i18n="nav_demo">功能演示</a></li>
+          <li><a href="#insights" class="nav-link" data-i18n="nav_insights">数据洞察</a></li>
+          <li><a href="#comparison" class="nav-link" data-i18n="nav_compare">优势对比</a></li>
+          <li><a href="#cases" class="nav-link" data-i18n="nav_cases">客户案例</a></li>
+          <li><a href="#faq" class="nav-link" data-i18n="nav_faq">常见问题</a></li>
+          <li><a href="#pricing" class="nav-link" data-i18n="nav_pricing">服务定价</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav_contact">联系我们</a></li>
+        </ul>
+        <div class="nav-actions">
+          <label class="sr-only" for="lang-select" data-i18n="lang_label">语言</label>
+          <select id="lang-select" class="lang-select" aria-describedby="lang-hint">
+            <option value="zh">中文</option>
+            <option value="en">English</option>
+          </select>
+          <span id="lang-hint" class="sr-only" data-i18n="lang_hint">切换后全站文案将同步更新</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Banner：轮播 + 核心卖点 -->
+    <section id="hero" class="hero" aria-labelledby="hero-heading">
+      <div class="hero-carousel" role="region" aria-roledescription="carousel" aria-label="首页焦点轮播">
+        <div class="hero-slides" id="hero-slides">
+          <article class="hero-slide is-active" data-slide="0" aria-hidden="false">
+            <div class="hero-slide-inner container">
+              <p class="hero-eyebrow" data-i18n="hero_eyebrow_1">AI财务风险预警</p>
+              <h1 id="hero-heading" class="hero-title" data-i18n="hero_title_1">智警财安 · AI财务风控专家</h1>
+              <p class="hero-desc" data-i18n="hero_desc_1">金融科技级多模态深度学习，实时 · 精准 · 智能 · 定制 — 让财务风险可见、可测、可控。</p>
+              <div class="hero-cta">
+                <a href="#product-highlights" class="btn btn-primary" data-i18n="hero_cta_primary">了解差异化优势</a>
+                <a href="#product-demo" class="btn btn-ghost" data-i18n="hero_cta_secondary">观看功能演示</a>
+              </div>
+            </div>
+          </article>
+          <article class="hero-slide" data-slide="1" aria-hidden="true">
+            <div class="hero-slide-inner container">
+              <p class="hero-eyebrow" data-i18n="hero_eyebrow_2">合规与可追溯</p>
+              <h2 class="hero-title" data-i18n="hero_title_2">全链路审计 · 满足监管要求</h2>
+              <p class="hero-desc" data-i18n="hero_desc_2">操作留痕、权限分级、报表一键导出，适配多行业合规框架。</p>
+              <div class="hero-cta">
+                <a href="#pricing" class="btn btn-primary" data-i18n="hero_cta_pricing">查看套餐</a>
+                <a href="#contact" class="btn btn-ghost" data-i18n="hero_cta_consult">方案咨询</a>
+              </div>
+            </div>
+          </article>
+          <article class="hero-slide" data-slide="2" aria-hidden="true">
+            <div class="hero-slide-inner container">
+              <p class="hero-eyebrow" data-i18n="hero_eyebrow_3">稳定与可扩展</p>
+              <h2 class="hero-title" data-i18n="hero_title_3">高可用架构 · 弹性扩展</h2>
+              <p class="hero-desc" data-i18n="hero_desc_3">多活部署与智能告警，保障关键业务连续性与运维可视。</p>
+              <div class="hero-cta">
+                <a href="#features" class="btn btn-primary" data-i18n="hero_cta_features">核心能力</a>
+                <a href="#contact" class="btn btn-ghost" data-i18n="hero_cta_support">联系支持</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="hero-controls container" aria-label="轮播控制">
+          <button type="button" class="carousel-btn carousel-prev" id="carousel-prev" aria-label="上一张幻灯片">
+            <span aria-hidden="true">‹</span>
+          </button>
+          <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="选择幻灯片"></div>
+          <button type="button" class="carousel-btn carousel-next" id="carousel-next" aria-label="下一张幻灯片">
+            <span aria-hidden="true">›</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 关键指标：数字滚动（AI财务风控核心指标） -->
+    <section class="section stats-strip stats-strip--enterprise" aria-labelledby="stats-heading" id="metrics">
+      <div class="container">
+        <h2 id="stats-heading" class="sr-only" data-i18n="stats_heading">关键业务指标</h2>
+        <div class="stats-grid stats-grid--5">
+          <div class="stat-item stat-item--accent">
+            <span class="stat-value"><span class="stat-num" data-target="98.7" data-decimals="1">0</span><span class="stat-suffix">%</span></span>
+            <span class="stat-label" data-i18n="stat_ai_acc">风险识别准确率（RNN+CNN）</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value"><span class="stat-num" data-target="500" data-prefix="" data-suffix="">0</span><span class="stat-suffix" data-i18n="stat_1_suffix">+</span></span>
+            <span class="stat-label" data-i18n="stat_1_label">服务企业客户</span>
+          </div>
+          <div class="stat-item stat-item--green">
+            <span class="stat-value"><span class="stat-num" data-target="60" data-decimals="0">0</span><span class="stat-suffix">%</span></span>
+            <span class="stat-label" data-i18n="stat_eff">风控效率提升</span>
+          </div>
+          <div class="stat-item stat-item--green">
+            <span class="stat-value"><span class="stat-num" data-target="40" data-decimals="0">0</span><span class="stat-suffix">%</span></span>
+            <span class="stat-label" data-i18n="stat_cost">人工成本降低</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value"><span class="stat-num" data-target="12" data-decimals="0">0</span><span class="stat-suffix" data-i18n="stat_reg_suffix"> 项</span></span>
+            <span class="stat-label" data-i18n="stat_reg">监管合规覆盖</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 合作伙伴 / 资质 -->
+    <section class="section trust-bar" aria-label="合作伙伴与生态">
+      <div class="container">
+        <p class="trust-title" data-i18n="trust_title">合作伙伴与生态认证</p>
+        <div class="trust-logos" role="list">
+          <span class="trust-logo" role="listitem" data-i18n="trust_1">等保三级</span>
+          <span class="trust-logo" role="listitem" data-i18n="trust_2">ISO 27001</span>
+          <span class="trust-logo" role="listitem" data-i18n="trust_3">可信云</span>
+          <span class="trust-logo" role="listitem" data-i18n="trust_4">金标联盟</span>
+          <span class="trust-logo" role="listitem" data-i18n="trust_5">信创适配</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 企业级功能扩展：产品特色专区 — AI财务风险预警差异化优势 -->
+    <section id="product-highlights" class="section product-highlights" aria-labelledby="ph-heading">
+      <div class="container">
+        <header class="section-header ph-header">
+          <p class="ph-kicker" data-i18n="ph_kicker">金融科技 · AI财务风控专家</p>
+          <h2 id="ph-heading" class="section-title" data-i18n="ph_title">AI财务风险预警 · 四大核心特色</h2>
+          <p class="section-subtitle" data-i18n="ph_subtitle">以「实时、精准、智能、定制」为锚点，构建可审计、可落地的企业级财务安全闭环。</p>
+        </header>
+
+        <!-- 顶部：核心数字 + 迷你趋势（示意） -->
+        <div class="ph-hero-metrics">
+          <div class="ph-metric ph-metric--primary">
+            <span class="ph-metric-value"><span class="stat-num" data-target="98.7" data-decimals="1">0</span>%</span>
+            <span class="ph-metric-label" data-i18n="ph_m1_label">多模态模型识别准确率</span>
+            <span class="ph-metric-hint" data-i18n="ph_m1_hint">RNN+CNN 融合 · 持续学习</span>
+          </div>
+          <div class="ph-metric ph-metric--orange">
+            <span class="ph-metric-value"><span class="stat-num" data-target="500" data-decimals="0">0</span>+</span>
+            <span class="ph-metric-label" data-i18n="ph_m2_label">企业客户与机构用户</span>
+            <span class="ph-metric-hint" data-i18n="ph_m2_hint">中小企业至大型集团</span>
+          </div>
+          <div class="ph-spark" aria-hidden="true">
+            <div class="ph-spark-bars">
+              <span style="height:40%"></span><span style="height:65%"></span><span style="height:55%"></span><span style="height:80%"></span><span style="height:72%"></span><span style="height:90%"></span>
+            </div>
+            <p class="ph-spark-cap" data-i18n="ph_spark_cap">风险指数（演示）</p>
+          </div>
+        </div>
+
+        <div class="ph-grid">
+          <!-- 特色1：六维风控 -->
+          <article class="ph-card ph-card--fade">
+            <div class="ph-card-icon" aria-hidden="true">AI</div>
+            <h3 class="ph-card-title" data-i18n="ph_c1_title">AI多维度财务风控</h3>
+            <p class="ph-card-desc" data-i18n="ph_c1_desc">覆盖资金流、税务、供应链、投融资、合规与舆情六大维度，统一风险视图。</p>
+            <ul class="ph-dim-list">
+              <li data-i18n="ph_dim1">资金流</li>
+              <li data-i18n="ph_dim2">税务</li>
+              <li data-i18n="ph_dim3">供应链</li>
+              <li data-i18n="ph_dim4">投融资</li>
+              <li data-i18n="ph_dim5">合规</li>
+              <li data-i18n="ph_dim6">舆情</li>
+            </ul>
+            <p class="ph-card-metric" data-i18n="ph_c1_metric">模型迭代周期 ≤ 7 天 · 支持行业特征注入</p>
+          </article>
+          <!-- 特色2：实时预警 -->
+          <article class="ph-card ph-card--fade">
+            <div class="ph-card-icon ph-card-icon--orange" aria-hidden="true">⚡</div>
+            <h3 class="ph-card-title" data-i18n="ph_c2_title">实时预警响应</h3>
+            <p class="ph-card-desc" data-i18n="ph_c2_desc">事件级推送与值班联动，显著压缩从发现到处置的时间窗口。</p>
+            <div class="ph-compare">
+              <div><span class="ph-compare-val">0.5</span><span data-i18n="ph_c2_us">小时 · 我方平均</span></div>
+              <div><span class="ph-compare-val ph-compare-val--muted">24</span><span data-i18n="ph_c2_ind">小时 · 行业平均</span></div>
+            </div>
+            <p class="ph-card-metric" data-i18n="ph_c2_metric">多渠道触达：企微 / 邮件 / 短信 / API</p>
+          </article>
+          <!-- 特色3：定制 -->
+          <article class="ph-card ph-card--fade">
+            <div class="ph-card-icon ph-card-icon--green" aria-hidden="true">◇</div>
+            <h3 class="ph-card-title" data-i18n="ph_c3_title">定制化解决方案</h3>
+            <p class="ph-card-desc" data-i18n="ph_c3_desc">按行业、规模与业务场景配置模型与策略模板，快速对齐组织治理要求。</p>
+            <ul class="ph-pill-list">
+              <li data-i18n="ph_c3_p1">行业定制</li>
+              <li data-i18n="ph_c3_p2">规模定制</li>
+              <li data-i18n="ph_c3_p3">场景定制</li>
+            </ul>
+            <p class="ph-card-metric" data-i18n="ph_c3_metric">交付：蓝图 → 配置 → 联调 → 试运行</p>
+          </article>
+          <!-- 特色4：全链路 -->
+          <article class="ph-card ph-card--fade">
+            <div class="ph-card-icon" aria-hidden="true">∞</div>
+            <h3 class="ph-card-title" data-i18n="ph_c4_title">全链路闭环服务</h3>
+            <p class="ph-card-desc" data-i18n="ph_c4_desc">监测、预警、分析、应对、复盘五步闭环，沉淀可复用的策略资产。</p>
+            <ol class="ph-chain">
+              <li data-i18n="ph_c4_s1">监测</li>
+              <li data-i18n="ph_c4_s2">预警</li>
+              <li data-i18n="ph_c4_s3">分析</li>
+              <li data-i18n="ph_c4_s4">应对</li>
+              <li data-i18n="ph_c4_s5">复盘</li>
+            </ol>
+            <p class="ph-card-metric" data-i18n="ph_c4_metric">复盘报表可对接审计与董事会材料</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 企业级功能扩展：核心功能 8 项 — 筛选 + 可展开详情 -->
+    <section id="features" class="section features features--enterprise" aria-labelledby="features-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="features-heading" class="section-title" data-i18n="features_title">企业级核心功能矩阵</h2>
+          <p class="section-subtitle" data-i18n="features_subtitle">基础能力夯实监测与预警，高级能力扩展舆情、合规报告、对标与决策辅助；支持按角色与行业灵活组合。</p>
+        </header>
+
+        <div class="feature-toolbar" role="toolbar" aria-label="功能分类筛选">
+          <button type="button" class="chip chip--active" data-filter="all" data-i18n="feat_f_all">全部</button>
+          <button type="button" class="chip" data-filter="basic" data-i18n="feat_f_basic">基础功能</button>
+          <button type="button" class="chip" data-filter="advanced" data-i18n="feat_f_adv">高级功能</button>
+          <button type="button" class="chip" data-filter="industry" data-i18n="feat_f_ind">行业功能</button>
+        </div>
+
+        <div class="feature-skeleton" id="feature-skeleton" aria-hidden="true">
+          <div class="sk-card"></div><div class="sk-card"></div><div class="sk-card"></div><div class="sk-card"></div>
+        </div>
+
+        <div class="feature-grid-extended" id="feature-grid-extended">
+          <!-- 基础功能 1 -->
+          <article class="feature-card-v2" data-tier="basic" data-industry="true" data-feature-id="f1">
+            <div class="fc-top">
+              <span class="fc-badge fc-badge--blue" data-i18n="feat_badge_basic">基础</span>
+              <span class="fc-icon" aria-hidden="true">◎</span>
+            </div>
+            <h3 class="fc-title" data-i18n="feat1_title">实时数据监测</h3>
+            <p class="fc-desc" data-i18n="feat1_desc">多源异构数据接入，分钟级同步财务与经营数据，形成统一风险数据湖。</p>
+            <p class="fc-metric" data-i18n="feat1_metric">接入延迟 P95 ≤ 5 分钟</p>
+            <button type="button" class="fc-toggle" aria-expanded="false" data-i18n="feat_expand">展开详情</button>
+            <div class="fc-detail" id="fc-detail-f1" hidden>
+              <p class="fc-detail-lead" data-i18n="feat1_detail_lead">预置连接器（演示）：</p>
+              <ul class="fc-tags">
+                <li>金蝶云</li><li>用友</li><li>银行开放 API</li><li>税务电子申报</li>
+              </ul>
+              <div class="fc-mock fc-mock--connect" aria-hidden="true">
+                <span>ERP</span><span class="fc-mock-line"></span><span data-i18n="feat1_mock_hub">智警财安</span><span class="fc-mock-line"></span><span>风控看板</span>
+              </div>
+            </div>
+          </article>
+          <!-- 基础功能 2 -->
+          <article class="feature-card-v2" data-tier="basic" data-industry="true" data-feature-id="f2">
+            <div class="fc-top">
+              <span class="fc-badge fc-badge--orange" data-i18n="feat_badge_basic">基础</span>
+              <span class="fc-icon" aria-hidden="true">!</span>
+            </div>
+            <h3 class="fc-title" data-i18n="feat2_title">多等级异常预警</h3>
+            <p class="fc-desc" data-i18n="feat2_desc">黄 / 橙 / 红三级预警与升级策略，支持值班主任与应急小组自动拉群。</p>
+            <p class="fc-metric" data-i18n="feat2_metric">误报率较规则引擎降低 35%+（样本）</p>
+            <button type="button" class="fc-toggle" aria-expanded="false" data-i18n="feat_expand">展开详情</button>
+            <div class="fc-detail" id="fc-detail-f2" hidden>
+              <p data-i18n="feat2_detail_lead">预警等级演示：</p>
+              <div class="fc-alerts">
+                <span class="al al--y" data-i18n="feat2_y">黄 · 关注</span>
+                <span class="al al--o" data-i18n="feat2_o">橙 · 复核</span>
+                <span class="al al--r" data-i18n="feat2_r">红 · 处置</span>
+              </div>
+              <p class="fc-small" data-i18n="feat2_channels">多渠道：企微 / 邮件 / 短信 / Webhook</p>
+            </div>
+          </article>
+          <!-- 基础功能 3 -->
+          <article class="feature-card-v2" data-tier="basic" data-feature-id="f3">
+            <div class="fc-top">
+              <span class="fc-badge fc-badge--blue" data-i18n="feat_badge_basic">基础</span>
+              <span class="fc-icon" aria-hidden="true">△</span>
+            </div>
+            <h3 class="fc-title" data-i18n="feat3_title">个性化评估模型</h3>
+            <p class="fc-desc" data-i18n="feat3_desc">结合组织风险偏好与行业基准，训练专属评估模型并灰度发布。</p>
+            <p class="fc-metric" data-i18n="feat3_metric">典型上线周期 4–8 周</p>
+            <button type="button" class="fc-toggle" aria-expanded="false" data-i18n="feat_expand">展开详情</button>
+            <div class="fc-detail" id="fc-detail-f3" hidden>
+              <ol class="fc-steps">
+                <li data-i18n="feat3_s1">需求调研 · 样本标注</li>
+                <li data-i18n="feat3_s2">特征工程 · 模型训练</li>
+                <li data-i18n="feat3_s3">上线调优 · 漂移监控</li>
+              </ol>
+            </div>
+          </article>
+          <!-- 基础功能 4 -->
+          <article class="feature-card-v2" data-tier="basic" data-industry="true" data-feature-id="f4">
+            <div class="fc-top">
+              <span class="fc-badge fc-badge--green" data-i18n="feat_badge_basic">基础</span>
+              <span class="fc-icon" aria-hidden="true">↔</span>
+            </div>
+            <h3 class="fc-title" data-i18n="feat4_title">智能应对策略</h3>
+            <p class="fc-desc" data-i18n="feat4_desc">将预案模板与审批流打通，自动生成处置建议并跟踪执行结果。</p>
+            <p class="fc-metric" data-i18n="feat4_metric">某制造企业案例：处置周期 −42%</p>
+            <button type="button" class="fc-toggle" aria-expanded="false" data-i18n="feat_expand">展开详情</button>
+            <div class="fc-detail" id="fc-detail-f4" hidden>
+              <div class="fc-before-after">
+                <div><span data-i18n="feat4_bef">优化前 平均 9.6 天</span></div>
+                <div><span data-i18n="feat4_aft">优化后 平均 5.5 天</span></div>
+              </div>
+              <p class="fc-small" data-i18n="feat4_note">* 演示口径，非承诺效果</p>
+            </div>
+          </article>
+          <!-- 高级功能 5 -->
+          <article class="feature-card-v2" data-tier="advanced" data-industry="true" data-feature-id="f5">
+            <div class="fc-top">
+              <span class="fc-badge fc-badge--purple" data-i18n="feat_badge_adv">高级</span>
+              <span class="fc-icon" aria-hidden="true">☷</span>
+            </div>
+            <h3 class="fc-title" data-i18n="feat5_title">财务舆情分析</h3>
+            <p class="fc-desc" data-i18n="feat5_desc">聚合公开舆情与行业资讯，NLP 抽取财务相关信号并与内部指标交叉验证。</p>
+            <p class="fc-metric" data-i18n="feat5_metric">日均处理资讯 200 万+ 条（集群）</p>
+            <button type="button" class="fc-toggle" aria-expanded="false" data-i18n="feat_expand">展开详情</button>
+            <div class="fc-detail" id="fc-detail-f5" hidden>
+              <p data-i18n="feat5_detail">支持自定义关键词与负面词典；与「预警」模块一键联动。</p>
+            </div>
+          </article>
+          <!-- 高级功能 6 -->
+          <article class="feature-card-v2" data-tier="advanced" data-feature-id="f6">
+            <div class="fc-top">
+              <span class="fc-badge fc-badge--purple" data-i18n="feat_badge_adv">高级</span>
+              <span class="fc-icon" aria-hidden="true">📋</span>
+            </div>
+            <h3 class="fc-title" data-i18n="feat6_title">合规审计报告</h3>
+            <p class="fc-desc" data-i18n="feat6_desc">一键生成符合监管格式的财务合规与内控审计报告，留痕可追溯。</p>
+            <p class="fc-metric" data-i18n="feat6_metric">覆盖 12+ 监管模板（可扩展）</p>
+            <button type="button" class="fc-toggle" aria-expanded="false" data-i18n="feat_expand">展开详情</button>
+            <div class="fc-detail" id="fc-detail-f6" hidden>
+              <p data-i18n="feat6_detail">支持《企业财务通则》《数据安全法》等合规模块勾选组装。</p>
+            </div>
+          </article>
+          <!-- 高级功能 7 -->
+          <article class="feature-card-v2" data-tier="advanced" data-industry="true" data-feature-id="f7">
+            <div class="fc-top">
+              <span class="fc-badge fc-badge--purple" data-i18n="feat_badge_adv">高级</span>
+              <span class="fc-icon" aria-hidden="true">⚖</span>
+            </div>
+            <h3 class="fc-title" data-i18n="feat7_title">跨企业对比分析</h3>
+            <p class="fc-desc" data-i18n="feat7_desc">同行业 / 同规模对标关键财务与风险指标，识别相对薄弱项。</p>
+            <p class="fc-metric" data-i18n="feat7_metric">对标样本库持续更新</p>
+            <button type="button" class="fc-toggle" aria-expanded="false" data-i18n="feat_expand">展开详情</button>
+            <div class="fc-detail" id="fc-detail-f7" hidden>
+              <p data-i18n="feat7_detail">支持集团内跨子公司对标与匿名行业指数对照。</p>
+            </div>
+          </article>
+          <!-- 高级功能 8 -->
+          <article class="feature-card-v2" data-tier="advanced" data-industry="true" data-feature-id="f8">
+            <div class="fc-top">
+              <span class="fc-badge fc-badge--purple" data-i18n="feat_badge_adv">高级</span>
+              <span class="fc-icon" aria-hidden="true">✦</span>
+            </div>
+            <h3 class="fc-title" data-i18n="feat8_title">智能决策辅助</h3>
+            <p class="fc-desc" data-i18n="feat8_desc">基于风险画像生成财务决策建议，可导出 PDF / Word 供管理层审阅。</p>
+            <p class="fc-metric" data-i18n="feat8_metric">建议书含：情景分析 · 敏感性 · 风险提示</p>
+            <button type="button" class="fc-toggle" aria-expanded="false" data-i18n="feat_expand">展开详情</button>
+            <div class="fc-detail" id="fc-detail-f8" hidden>
+              <p data-i18n="feat8_detail">导出文件含水印与操作日志，满足审计留痕要求。</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="feature-cta-row">
+          <button type="button" class="btn btn-primary" id="btn-booking-demo" data-i18n="feat_cta_demo">申请功能演示</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 企业级功能扩展：场景化方案 — 横向滑动 -->
+    <section id="scenarios" class="section scenarios" aria-labelledby="scenarios-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="scenarios-heading" class="section-title" data-i18n="sc_title">行业场景化方案</h2>
+          <p class="section-subtitle" data-i18n="sc_subtitle">痛点 → 方案 → 收益，三段式呈现；支持触控滑动切换。</p>
+        </header>
+        <div class="sc-viewport" id="sc-viewport">
+          <div class="sc-track" id="sc-track">
+            <article class="sc-slide" data-sc="0">
+              <h3 class="sc-name" data-i18n="sc1_name">中小企业</h3>
+              <p class="sc-pain" data-i18n="sc1_pain"><strong>痛点：</strong>资金链波动难预判，税务合规成本高。</p>
+              <p class="sc-sol" data-i18n="sc1_sol"><strong>方案：</strong>轻量接入 + 税务与资金双引擎预警模板。</p>
+              <p class="sc-gain" data-i18n="sc1_gain"><strong>收益：</strong>平均提前 10–20 天发现现金流压力（演示口径）。</p>
+              <div class="sc-diagram sc-diagram--sme" aria-hidden="true"><span></span><span></span><span></span></div>
+            </article>
+            <article class="sc-slide" data-sc="1">
+              <h3 class="sc-name" data-i18n="sc2_name">大型集团</h3>
+              <p class="sc-pain" data-i18n="sc2_pain"><strong>痛点：</strong>跨子公司数据割裂，集团统筹难。</p>
+              <p class="sc-sol" data-i18n="sc2_sol"><strong>方案：</strong>多法人账套映射 + 集团风控驾驶舱。</p>
+              <p class="sc-gain" data-i18n="sc2_gain"><strong>收益：</strong>统一风险语言，支撑月度经营分析会。</p>
+              <div class="sc-diagram sc-diagram--group" aria-hidden="true"></div>
+            </article>
+            <article class="sc-slide" data-sc="2">
+              <h3 class="sc-name" data-i18n="sc3_name">金融机构</h3>
+              <p class="sc-pain" data-i18n="sc3_pain"><strong>痛点：</strong>信贷与反欺诈模型需可解释、可审计。</p>
+              <p class="sc-sol" data-i18n="sc3_sol"><strong>方案：</strong>监管报送接口 + 模型解释报告 + 实时预警。</p>
+              <p class="sc-gain" data-i18n="sc3_gain"><strong>收益：</strong>审查材料一次通过率提升（演示口径）。</p>
+              <div class="sc-diagram sc-diagram--fin" aria-hidden="true"></div>
+            </article>
+          </div>
+        </div>
+        <div class="sc-dots" id="sc-dots" role="tablist" aria-label="场景切换"></div>
+      </div>
+    </section>
+
+    <!-- 企业级功能扩展：产品功能交互演示 -->
+    <section id="product-demo" class="section product-demo" aria-labelledby="demo-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="demo-heading" class="section-title" data-i18n="demo_title">产品功能演示</h2>
+          <p class="section-subtitle" data-i18n="demo_subtitle">模拟「数据接入 → 风险监测 → 预警推送 → 策略生成」全流程，可自动播放或分步查看。</p>
+        </header>
+        <div class="demo-panel">
+          <div class="demo-modes">
+            <button type="button" class="btn btn-outline btn-sm" id="demo-mode-step" data-i18n="demo_mode_step">分步演示</button>
+            <button type="button" class="btn btn-primary btn-sm" id="demo-mode-auto" data-i18n="demo_mode_auto">自动演示</button>
+          </div>
+          <div class="demo-progress-wrap">
+            <div class="demo-progress" id="demo-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="演示进度"></div>
+          </div>
+          <ol class="demo-steps" id="demo-steps">
+            <li class="demo-step is-active" data-step="0"><span class="demo-step-idx">1</span><span data-i18n="demo_s1">数据接入</span></li>
+            <li class="demo-step" data-step="1"><span class="demo-step-idx">2</span><span data-i18n="demo_s2">风险监测</span></li>
+            <li class="demo-step" data-step="2"><span class="demo-step-idx">3</span><span data-i18n="demo_s3">预警推送</span></li>
+            <li class="demo-step" data-step="3"><span class="demo-step-idx">4</span><span data-i18n="demo_s4">策略生成</span></li>
+          </ol>
+          <div class="demo-stage" id="demo-stage" tabindex="0" aria-live="polite">
+            <input type="hidden" id="demo-state-step" value="0" />
+            <p class="demo-narration" id="demo-narration" data-i18n="demo_n1">正在连接金蝶 / 用友 / 银行 API（演示）…</p>
+            <div class="demo-art" id="demo-art" aria-hidden="true"></div>
+          </div>
+          <div class="demo-controls">
+            <button type="button" class="btn btn-outline" id="demo-prev" data-i18n="demo_prev">上一步</button>
+            <button type="button" class="btn btn-outline" id="demo-pause" data-i18n="demo_pause">暂停</button>
+            <button type="button" class="btn btn-primary" id="demo-next" data-i18n="demo_next">下一步</button>
+            <button type="button" class="btn btn-ghost demo-replay" id="demo-replay" data-i18n="demo_replay">重播</button>
+          </div>
+          <div class="demo-extras">
+            <button type="button" class="btn btn-outline btn-sm" id="demo-share" data-i18n="demo_share">复制演示链接</button>
+            <a href="#" class="btn btn-outline btn-sm" id="demo-download" data-i18n="demo_download">下载演示说明 PDF</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 数据洞察：图表看板 -->
+    <section id="insights" class="section insights" aria-labelledby="insights-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="insights-heading" class="section-title" data-i18n="insights_title">数据洞察看板</h2>
+          <p class="section-subtitle" data-i18n="insights_subtitle">基于脱敏样本的演示指标，展示平台在风控趋势、告警构成与合规覆盖上的可视化能力。</p>
+        </header>
+        <div class="insights-toolbar">
+          <button type="button" class="btn btn-outline btn-sm" id="chart-refresh" data-i18n="insights_refresh">刷新演示数据</button>
+          <span class="insights-hint" data-i18n="insights_hint">图表支持交互悬停查看数值</span>
+        </div>
+        <div class="insights-grid">
+          <article class="chart-card chart-card--wide">
+            <header class="chart-card-head">
+              <h3 class="chart-card-title" data-i18n="chart_line_title">风险识别趋势（近 12 个月）</h3>
+              <span class="chart-badge" data-i18n="chart_badge_trend">时序分析</span>
+            </header>
+            <div class="chart-wrap">
+              <canvas id="chart-line" aria-label="风险识别趋势折线图" role="img"></canvas>
+            </div>
+          </article>
+          <article class="chart-card">
+            <header class="chart-card-head">
+              <h3 class="chart-card-title" data-i18n="chart_doughnut_title">告警类型分布</h3>
+              <span class="chart-badge chart-badge--accent" data-i18n="chart_badge_mix">构成分析</span>
+            </header>
+            <div class="chart-wrap chart-wrap--compact">
+              <canvas id="chart-doughnut" aria-label="告警类型分布图" role="img"></canvas>
+            </div>
+          </article>
+          <article class="chart-card chart-card--wide">
+            <header class="chart-card-head">
+              <h3 class="chart-card-title" data-i18n="chart_bar_title">合规检查项覆盖率（按域）</h3>
+              <span class="chart-badge" data-i18n="chart_badge_coverage">域对比</span>
+            </header>
+            <div class="chart-wrap chart-wrap--bar">
+              <canvas id="chart-bar" aria-label="合规检查覆盖率柱状图" role="img"></canvas>
+            </div>
+          </article>
+        </div>
+        <p class="chart-footnote" data-i18n="insights_note">* 图示为前端演示数据，不代表任何客户真实业务结果。</p>
+      </div>
+    </section>
+
+    <!-- 企业级功能扩展：产品优势对比 -->
+    <section id="comparison" class="section comparison" aria-labelledby="cmp-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="cmp-heading" class="section-title" data-i18n="cmp_title">产品优势对比</h2>
+          <p class="section-subtitle" data-i18n="cmp_subtitle">多维度对标典型市场方案；可隐藏友商名称以便内部分享。</p>
+        </header>
+        <div class="cmp-toolbar">
+          <label class="cmp-switch">
+            <input type="checkbox" id="cmp-hide-names" checked />
+            <span data-i18n="cmp_hide">隐藏竞品名称（显示为友商 A/B）</span>
+          </label>
+        </div>
+        <div class="cmp-table-wrap" role="region" aria-label="对比表" tabindex="0">
+          <table class="cmp-table">
+            <thead>
+              <tr>
+                <th data-i18n="cmp_col_dim">对比维度</th>
+                <th class="cmp-us" data-i18n="cmp_col_us">智警财安</th>
+                <th><span class="cmp-rival" data-rival="a" data-i18n="cmp_col_a">友商 A</span></th>
+                <th><span class="cmp-rival" data-rival="b" data-i18n="cmp_col_b">友商 B</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-i18n="cmp_r1">AI 模型能力</td>
+                <td class="cmp-us"><strong data-i18n="cmp_r1_us">RNN+CNN 多模态 · 可解释</strong></td>
+                <td data-i18n="cmp_r1_a">单一规则 + 浅层模型</td>
+                <td data-i18n="cmp_r1_b">通用大模型 · 财务域微调不足</td>
+              </tr>
+              <tr>
+                <td data-i18n="cmp_r2">识别准确率（样本）</td>
+                <td class="cmp-us"><strong>98.7%</strong></td>
+                <td>92.1%</td>
+                <td>94.6%</td>
+              </tr>
+              <tr>
+                <td data-i18n="cmp_r3">预警响应</td>
+                <td class="cmp-us"><strong data-i18n="cmp_r3_us">平均 0.5 小时</strong></td>
+                <td data-i18n="cmp_r3_a">~24 小时</td>
+                <td data-i18n="cmp_r3_b">~12 小时</td>
+              </tr>
+              <tr>
+                <td data-i18n="cmp_r4">功能覆盖</td>
+                <td class="cmp-us"><strong data-i18n="cmp_r4_us">基础 + 高级 + 行业套件</strong></td>
+                <td data-i18n="cmp_r4_a">基础为主</td>
+                <td data-i18n="cmp_r4_b">高级功能另购</td>
+              </tr>
+              <tr>
+                <td data-i18n="cmp_r5">服务体系</td>
+                <td class="cmp-us"><strong data-i18n="cmp_r5_us">7×24 · 专属经理 · 定制开发</strong></td>
+                <td data-i18n="cmp_r5_a">工作日工单</td>
+                <td data-i18n="cmp_r5_b">标准 SLA</td>
+              </tr>
+              <tr>
+                <td data-i18n="cmp_r6">综合成本</td>
+                <td class="cmp-us"><strong data-i18n="cmp_r6_us">一体化 · 运维成本可控</strong></td>
+                <td data-i18n="cmp_r6_a">多系统叠加</td>
+                <td data-i18n="cmp_r6_b">按模块计费</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cmp-cta">
+          <button type="button" class="btn btn-primary" id="btn-cmp-custom" data-i18n="cmp_cta">获取定制化方案对比</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 客户案例 -->
+    <section id="cases" class="section cases" aria-labelledby="cases-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="cases-heading" class="section-title" data-i18n="cases_title">客户案例与评价</h2>
+          <p class="section-subtitle" data-i18n="cases_subtitle">来自金融与公共服务领域的实践摘要，均为演示文案。</p>
+        </header>
+        <div class="cases-carousel" role="region" aria-roledescription="carousel" aria-label="客户案例轮播">
+          <div class="cases-track" id="cases-track">
+            <article class="case-card is-active" data-case="0">
+              <blockquote class="case-quote" data-i18n="case_1_quote">「审计报表从数天缩短到小时级，合规团队与业务部门的协作成本明显下降。」</blockquote>
+              <footer class="case-meta">
+                <span class="case-org" data-i18n="case_1_org">某城商行 · 风控科技部</span>
+                <span class="case-tag" data-i18n="case_1_tag">财务合规</span>
+              </footer>
+            </article>
+            <article class="case-card" data-case="1">
+              <blockquote class="case-quote" data-i18n="case_2_quote">「多租户隔离与细粒度权限满足了我们分级管理的要求，上线过程平滑。」</blockquote>
+              <footer class="case-meta">
+                <span class="case-org" data-i18n="case_2_org">某省级单位 · 信息化中心</span>
+                <span class="case-tag" data-i18n="case_2_tag">数据安全</span>
+              </footer>
+            </article>
+            <article class="case-card" data-case="2">
+              <blockquote class="case-quote" data-i18n="case_3_quote">「告警收敛与值班联动减少了夜间误报，运维大盘对管理层非常友好。」</blockquote>
+              <footer class="case-meta">
+                <span class="case-org" data-i18n="case_3_org">某证券机构 · 运维中心</span>
+                <span class="case-tag" data-i18n="case_3_tag">智能运维</span>
+              </footer>
+            </article>
+          </div>
+          <div class="cases-controls">
+            <button type="button" class="cases-btn" id="cases-prev" aria-label="上一条案例">‹</button>
+            <div class="cases-dots" id="cases-dots" role="tablist" aria-label="案例索引"></div>
+            <button type="button" class="cases-btn" id="cases-next" aria-label="下一条案例">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 实施流程 -->
+    <section class="section timeline-section" aria-labelledby="timeline-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="timeline-heading" class="section-title" data-i18n="timeline_title">实施与交付流程</h2>
+          <p class="section-subtitle" data-i18n="timeline_subtitle">标准化里程碑 + 可配置扩展，保障交付可预期。</p>
+        </header>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-step" aria-hidden="true">01</span>
+            <div class="timeline-body">
+              <h3 class="timeline-title" data-i18n="tl_1_title">需求调研</h3>
+              <p class="timeline-desc" data-i18n="tl_1_desc">梳理业务场景、合规边界与集成系统，输出差距分析。</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-step" aria-hidden="true">02</span>
+            <div class="timeline-body">
+              <h3 class="timeline-title" data-i18n="tl_2_title">方案设计</h3>
+              <p class="timeline-desc" data-i18n="tl_2_desc">架构与权限模型设计，明确 SLA 与验收指标。</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-step" aria-hidden="true">03</span>
+            <div class="timeline-body">
+              <h3 class="timeline-title" data-i18n="tl_3_title">部署联调</h3>
+              <p class="timeline-desc" data-i18n="tl_3_desc">环境部署、数据迁移演练与接口联调，灰度验证。</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-step" aria-hidden="true">04</span>
+            <div class="timeline-body">
+              <h3 class="timeline-title" data-i18n="tl_4_title">培训上线</h3>
+              <p class="timeline-desc" data-i18n="tl_4_desc">管理员与业务培训、值守交接与持续优化建议。</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section id="faq" class="section faq-section" aria-labelledby="faq-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="faq-heading" class="section-title" data-i18n="faq_title">常见问题</h2>
+          <p class="section-subtitle" data-i18n="faq_subtitle">购买与部署前的高频疑问，如需定制方案请联系顾问。</p>
+        </header>
+        <div class="faq-list" id="faq-list">
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" id="faq-btn-1" aria-expanded="false" aria-controls="faq-panel-1" data-i18n="faq_q1">是否支持私有化部署？</button>
+            <div class="faq-panel" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1" hidden>
+              <p data-i18n="faq_a1">支持私有化、混合云与信创环境；企业版提供专项架构评审与交付项目经理。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" id="faq-btn-2" aria-expanded="false" aria-controls="faq-panel-2" data-i18n="faq_q2">数据主权与加密策略如何配置？</button>
+            <div class="faq-panel" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2" hidden>
+              <p data-i18n="faq_a2">支持租户级密钥托管、字段级脱敏与按角色最小授权；可对接贵司 KMS 与审计平台。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" id="faq-btn-3" aria-expanded="false" aria-controls="faq-panel-3" data-i18n="faq_q3">与现有 ERP / 核心系统如何集成？</button>
+            <div class="faq-panel" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3" hidden>
+              <p data-i18n="faq_a3">提供标准 API、消息队列与文件批处理适配器；专业版含集成顾问人天包。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" id="faq-btn-4" aria-expanded="false" aria-controls="faq-panel-4" data-i18n="faq_q4">服务级别与响应时间？</button>
+            <div class="faq-panel" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4" hidden>
+              <p data-i18n="faq_a4">基础版工作日工单；专业版含专属群与约定响应时效；企业版可签 SLA 与驻场。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 定价：3 档，专业版高亮 -->
+    <section id="pricing" class="section pricing" aria-labelledby="pricing-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="pricing-heading" class="section-title" data-i18n="pricing_title">服务定价</h2>
+          <p class="section-subtitle" data-i18n="pricing_subtitle">按需选择版本；专业版包含完整审计与专属支持，适合中大型企业。</p>
+        </header>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3 class="price-name" data-i18n="price_basic_name">基础版</h3>
+            <p class="price-tag"><span class="price-currency">¥</span><span class="price-amount">9,800</span><span class="price-unit" data-i18n="price_per_year">/ 年</span></p>
+            <ul class="price-list">
+              <li data-i18n="price_basic_1">核心风控与报表</li>
+              <li data-i18n="price_basic_2">邮件与工单支持</li>
+              <li data-i18n="price_basic_3">标准部署文档</li>
+            </ul>
+            <button type="button" class="btn btn-outline btn-block contact-scroll" data-i18n="price_cta">联系销售</button>
+          </article>
+          <article class="price-card price-card--featured" aria-label="推荐方案：专业版">
+            <span class="price-badge" data-i18n="price_badge">推荐</span>
+            <h3 class="price-name" data-i18n="price_pro_name">专业版</h3>
+            <p class="price-tag"><span class="price-currency">¥</span><span class="price-amount">29,800</span><span class="price-unit" data-i18n="price_per_year">/ 年</span></p>
+            <ul class="price-list">
+              <li data-i18n="price_pro_1">全量审计与合规模板</li>
+              <li data-i18n="price_pro_2">专属客户经理</li>
+              <li data-i18n="price_pro_3">高可用部署指导</li>
+            </ul>
+            <button type="button" class="btn btn-primary btn-block contact-scroll" data-i18n="price_cta">联系销售</button>
+          </article>
+          <article class="price-card">
+            <h3 class="price-name" data-i18n="price_ent_name">企业版</h3>
+            <p class="price-tag price-tag--custom" data-i18n="price_custom">定制报价</p>
+            <ul class="price-list">
+              <li data-i18n="price_ent_1">私有化 / 混合云</li>
+              <li data-i18n="price_ent_2">定制集成与 SLA</li>
+              <li data-i18n="price_ent_3">安全驻场与演练</li>
+            </ul>
+            <button type="button" class="btn btn-outline btn-block contact-scroll" data-i18n="price_cta">联系销售</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="section contact" aria-labelledby="contact-heading">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <h2 id="contact-heading" class="section-title" data-i18n="contact_title">联系我们</h2>
+          <p class="section-subtitle contact-lead" data-i18n="contact_lead">留下信息，我们将在 1 个工作日内与您联系（演示为前端模拟流程）。</p>
+          <ul class="contact-list">
+            <li>
+              <span class="contact-label" data-i18n="contact_phone_label">电话</span>
+              <a href="tel:4008006600">400-800-6600</a>
+            </li>
+            <li>
+              <span class="contact-label" data-i18n="contact_email_label">邮箱</span>
+              <a href="mailto:hello@zhijincaian.example">hello@zhijincaian.example</a>
+            </li>
+            <li>
+              <span class="contact-label" data-i18n="contact_addr_label">地址</span>
+              <span data-i18n="contact_addr">中国 · 上海市浦东新区科技大道 88 号</span>
+            </li>
+          </ul>
+        </div>
+        <form id="contact-form" class="contact-form" novalidate aria-describedby="form-status">
+          <p id="form-status" class="sr-only" role="status" aria-live="polite"></p>
+          <div class="form-row">
+            <label for="field-name" data-i18n="form_name">姓名</label>
+            <input type="text" id="field-name" name="name" autocomplete="name" required maxlength="64" aria-required="true" />
+            <span class="field-error" id="error-name" role="alert"></span>
+          </div>
+          <div class="form-row">
+            <label for="field-phone" data-i18n="form_phone">手机</label>
+            <input type="tel" id="field-phone" name="phone" inputmode="numeric" autocomplete="tel" required pattern="^1[3-9]\d{9}$" aria-required="true" />
+            <span class="field-error" id="error-phone" role="alert"></span>
+          </div>
+          <div class="form-row">
+            <label for="field-email" data-i18n="form_email">邮箱</label>
+            <input type="email" id="field-email" name="email" autocomplete="email" required maxlength="128" aria-required="true" />
+            <span class="field-error" id="error-email" role="alert"></span>
+          </div>
+          <div class="form-row">
+            <label for="field-message" data-i18n="form_message">需求描述</label>
+            <textarea id="field-message" name="message" rows="4" required maxlength="2000" aria-required="true"></textarea>
+            <span class="field-error" id="error-message" role="alert"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" id="form-submit">
+            <span class="btn-label" data-i18n="form_submit">提交咨询</span>
+            <span class="btn-loading" hidden aria-hidden="true">
+              <span class="spinner" aria-hidden="true"></span>
+              <span data-i18n="form_loading">提交中…</span>
+            </span>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p class="footer-copy">
+        <span data-i18n="footer_copy">© 2025 智警财安科技有限公司 版权所有</span>
+        <span class="footer-sep" aria-hidden="true"> · </span>
+        <a href="#" class="footer-link" data-i18n="footer_privacy">隐私政策</a>
+        <span class="footer-sep" aria-hidden="true"> · </span>
+        <a href="#" class="footer-link" data-i18n="footer_terms">服务条款</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button type="button" id="back-to-top" class="back-to-top" aria-label="回到页面顶部" hidden>
+    <span aria-hidden="true">↑</span>
+  </button>
+
+  <!-- 在线客服 -->
+  <div class="chat-widget" id="chat-widget">
+    <button type="button" class="chat-fab" id="chat-fab" aria-expanded="false" aria-controls="chat-panel" aria-label="打开在线客服">
+      <span class="chat-fab-icon" aria-hidden="true">💬</span>
+    </button>
+    <div class="chat-panel" id="chat-panel" role="dialog" aria-modal="true" aria-labelledby="chat-title" aria-hidden="true" hidden>
+      <div class="chat-header">
+        <h2 id="chat-title" class="chat-title" data-i18n="chat_title">在线客服</h2>
+        <button type="button" class="chat-close" id="chat-close" aria-label="关闭客服窗口">×</button>
+      </div>
+      <div class="chat-body" id="chat-body">
+        <p class="chat-msg chat-msg--bot" data-i18n="chat_welcome">您好，我是智警财安智能客服。请问需要了解产品演示还是报价？</p>
+      </div>
+      <form class="chat-form" id="chat-form">
+        <label for="chat-input" class="sr-only" data-i18n="chat_input_label">输入消息</label>
+        <input type="text" id="chat-input" class="chat-input" maxlength="500" autocomplete="off" data-i18n-placeholder="chat_placeholder" placeholder="输入消息，回车发送" />
+        <button type="submit" class="btn btn-primary chat-send" data-i18n="chat_send">发送</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 企业级功能扩展：通用弹窗 — ESC / 点击遮罩关闭 -->
+  <div class="modal-backdrop" id="modal-backdrop" hidden>
+    <div
+      class="modal"
+      id="modal-generic"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      tabindex="-1"
+    >
+      <button type="button" class="modal-close" id="modal-close-btn" aria-label="关闭">×</button>
+      <h2 id="modal-title" class="modal-title" data-i18n="modal_book_title">申请功能演示</h2>
+      <p class="modal-lead" id="modal-lead" data-i18n="modal_book_lead">请留下信息，顾问将在 1 个工作日内与您联系（前端模拟）。</p>
+      <form id="modal-form" class="modal-form" novalidate>
+        <input type="hidden" name="modal_type" id="modal-type" value="booking" />
+        <div class="form-row">
+          <label for="modal-name" data-i18n="form_name">姓名</label>
+          <input type="text" id="modal-name" name="name" required maxlength="64" autocomplete="name" />
+        </div>
+        <div class="form-row">
+          <label for="modal-phone" data-i18n="form_phone">手机</label>
+          <input type="tel" id="modal-phone" name="phone" required pattern="^1[3-9]\d{9}$" inputmode="numeric" autocomplete="tel" />
+        </div>
+        <div class="form-row">
+          <label for="modal-company" data-i18n="modal_company">公司 / 机构</label>
+          <input type="text" id="modal-company" name="company" maxlength="128" autocomplete="organization" />
+        </div>
+        <div class="form-row">
+          <label for="modal-email" data-i18n="form_email">邮箱</label>
+          <input type="email" id="modal-email" name="email" required maxlength="128" autocomplete="email" />
+        </div>
+        <div class="form-row">
+          <label for="modal-note" data-i18n="modal_note">补充说明</label>
+          <textarea id="modal-note" name="note" rows="3" maxlength="1000"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" data-i18n="modal_submit">提交</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Chart.js：图表看板（UMD，与原生 JS 配合） -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
